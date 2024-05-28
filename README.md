@@ -2,9 +2,9 @@
 
 ## Criteria Evaluation
 
-1.	Object Oriented Programming - (Wikipedia](https://en.wikipedia.org/wiki/Object-oriented_programming)
-2.	Respect SOLID Principles - [Wikipedia](https://en.wikipedia.org/wiki/SOLID)
-3.	Testability - [Wikipedia](https://en.wikipedia.org/wiki/Unit_testing)
+1.	Object Oriented Programming - [wikipedia](https://en.wikipedia.org/wiki/Object-oriented_programming)
+2.	Respect SOLID Principles - [wikipedia](https://en.wikipedia.org/wiki/SOLID)
+3.	Testability - [wikipedia](https://en.wikipedia.org/wiki/Unit_testing)
 
 ## Test Requirements
 
