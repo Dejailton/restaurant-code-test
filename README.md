@@ -2,17 +2,15 @@
 
 ## Criteria Evaluation
 
-1.	Object Oriented Design
-2.	Respect SOLID Principles
-3.	Readability
-4.	Maintainability
-5.	Testability
+1.	Object Oriented Programming - (Wikipedia](https://en.wikipedia.org/wiki/Object-oriented_programming)
+2.	Respect SOLID Principles - [Wikipedia](https://en.wikipedia.org/wiki/SOLID)
+3.	Testability - [Wikipedia](https://en.wikipedia.org/wiki/Unit_testing)
 
 ## Test Requirements
 
 1.	This application should runo commands via terminal (console)
 2.	must have unit tests (evidence the sample input/output).	
-4.	Push your code to GitHub repo, and create a simple github action to build and test
+3.	Push your code to GitHub repo, and create a simple github action to build and test
 
 ## App Rules
 
