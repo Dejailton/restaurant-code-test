@@ -1,6 +1,6 @@
 # Restaurant Code Test
 
-## We are expecting to evaluate follow criteria
+## Criteria Evaluation
 
 1.	Object Oriented Design
 2.	Respect SOLID Principles
@@ -8,13 +8,13 @@
 4.	Maintainability
 5.	Testability
 
-## Backend Requirements
+## Test Requirements
 
 1.	This application should runo commands via terminal (console)
 2.	must have unit tests (evidence the sample input/output).	
 4.	Push your code to GitHub repo, and create a simple github action to build and test
 
-## Rules
+## App Rules
 
 1.	You must enter time of day as `morning` or `night`
 2.	You must enter a comma delimited list of dish types with at least one selection
@@ -26,7 +26,7 @@
 8.	At `night`, you can have multiple orders of potatoes
 9.	Except for the above rules, you can only order 1 of each dish type
 
-## Dishes for Each time of day
+## Dishes Table
 
 | Dish Type   | morning          | night  |
 | ----------- | ---------------- | ------ |
@@ -35,7 +35,7 @@
 | 3 (drink)   | coffee           | wine   |
 | 4 (dessert) | _Not Applicable_ | cake   |
 
-## Sample Input and Output:
+## Input and Output samples:
 
 - Input: morning, 1, 2, 3    	Output: eggs, toast, coffee
 - Input: morning, 2, 1, 3 	Output: eggs, toast, coffee
