@@ -12,7 +12,7 @@
 2.	must have unit tests (evidence the sample input/output).	
 3.	Push your code to GitHub repo, and create a simple github action to build and test
 
-## App Rules
+## Rules
 
 1.	You must enter time of day as `morning` or `night`
 2.	You must enter a comma delimited list of dish types with at least one selection
@@ -33,13 +33,16 @@
 | 3 (drink)   | coffee           | wine   |
 | 4 (dessert) | _Not Applicable_ | cake   |
 
-## Input and Output samples:
+## Samples for Unit-Test:
 
-- Input: morning, 1, 2, 3    	Output: eggs, toast, coffee
-- Input: morning, 2, 1, 3 	Output: eggs, toast, coffee
-- Input: morning, 1, 2, 3, 4	Output: eggs, toast, coffee, error
-- Input: morning, 1, 2, 3, 3, 3	Output: eggs, toast, coffee(x3)
-- Input: night, 1, 2, 3, 4	Output:  steak, potato, wine, cake
-- Input: night, 1, 2, 2, 4	Output steak, potato(x2), cake
-- Input: night, 1, 2, 3, 5	Output:  steak, potato, wine, error
-- Input: night, 1, 1, 2, 3, 5	Output:  steak, error
+| Input                  | Output                     |
+| ---------------------- | -------------------------- |
+| morning, 1, 2, 3       | eggs, toast, coffee        |
+| morning, 2, 1, 3       | eggs, toast, coffee        |
+| morning, 1, 2, 3, 4    | eggs, toast, coffee, error |
+| morning, 1, 2, 3, 3, 3 | eggs, toast, coffee(x3)    |
+| night, 1, 2, 3, 4      | steak, potato, wine, cake  |
+| night, 3, 4, 2, 1      | steak, potato, wine, cake  |
+| night, 1, 2, 2, 4      | steak, potato(x2), cake    |
+| night, 1, 2, 3, 5      | steak, potato, wine, error |
+| night, 1, 1, 2, 3,     | steak, error               |
