@@ -8,7 +8,7 @@
 
 ## Test Requirements
 
-1.	This application should runo commands via terminal (console)
+1.	This application should run commands via terminal (console)
 2.	must have unit tests (evidence the sample input/output).	
 3.	Push your code to GitHub repo, and create a simple github action to build and test
 
