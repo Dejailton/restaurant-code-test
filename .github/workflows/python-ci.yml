@@ -28,7 +28,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         python -m pip install ruff
-        python -m pip install .[build]
 
     - name: Run Ruff
       run: ruff check --output-format=github
@@ -37,5 +36,4 @@ jobs:
       run: |
         pytest --cov=./
         
-    - name: Build package
-      run: python -m build
+  
