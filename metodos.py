@@ -1,6 +1,6 @@
 class Metodos:
-    def order_list(lista):
-        lista.sort()
+    def order_list(self, lista):
+        lista = lista.sort()
         return lista
     
     

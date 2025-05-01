@@ -1,12 +1,16 @@
 from morning import Morning
 from night import Night
+from metodos import Metodos
 
 morning = Morning()
 night = Night()
+metodos = Metodos()
 
 periodo = input("Digite o período do dia:")
-entradas = [0, 0, 0, 0, 0]
+entradas = [2, 1, 3, 4, 5]
 quantidade_entradas = 0
+metodos.order_list(entradas)
+print(entradas)
 
 #entradas
 for i in range(5):
