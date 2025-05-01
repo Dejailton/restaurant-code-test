@@ -1,4 +1,6 @@
-class Night:
+from metodos import Metodos
+
+class Night(Metodos):
     def __init__(self) -> None:
         self.entree = "steak"
         self.side = "potato"
