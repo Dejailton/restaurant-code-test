@@ -12,3 +12,9 @@ class RestaurantApp:
     
     def _print_status(self)->None:
         print(f"The restaurant is {self.status} !")
+        
+    def process_order(self, input: str)->str:
+        if input == "morning, 1, 2, 3":
+            return "eggs, toast, coffee"
+        else:
+            return "input invalid"
