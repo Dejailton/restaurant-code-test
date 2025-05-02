@@ -35,3 +35,14 @@ class TestRestaurantApp:
         currentValue = app.status
         # assert
         assert currentValue == expectedValue
+        
+    def test_when_input_morning123_then_output(self):
+        # arrange
+        input = "morning, 1, 2, 3"
+        expectedOutput = "eggs, toast, coffee"
+        currentOutput = ""
+        app = RestaurantApp()
+        # act
+        currentOutput = app.process_order(input)
+        # assert
+        assert currentOutput == expectedOutput
