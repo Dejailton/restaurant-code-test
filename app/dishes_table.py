@@ -53,12 +53,13 @@ class Dishes_Table:
         return output
     
     def input_with_repeated_coffee (self, input_list: List[str]):
-        coffee = 0
-        for item in input_list:
-            if (item == "3"):
-                coffee = coffee + 1
-        if (coffee >= 2):
-            coffee_str = str(coffee)
-            self.dish_type[3] = f"coffee(x{coffee_str})"
-        elif (coffee == 1):
-            self.dish_type[3] = "coffee"
+        if (self.dish_type[0] == "morning"):
+            coffee = 0
+            for item in input_list:
+                if (item == "3"):
+                    coffee = coffee + 1
+            if (coffee >= 2):
+                coffee_str = str(coffee)
+                self.dish_type[3] = f"coffee(x{coffee_str})"
+            elif (coffee == 1):
+                self.dish_type[3] = "coffee"

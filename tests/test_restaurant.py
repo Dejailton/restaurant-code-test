@@ -81,7 +81,7 @@ class TestRestaurantApp:
         # assert
         assert currentOutput == expectedOutput
         
-    """ def test_when_input_night1234_then_output(self):
+    def test_when_input_night1234_then_output(self):
         # arrange
         input = "night, 1, 2, 3, 4"
         expectedOutput = "steak, potato, wine, cake"
@@ -90,7 +90,7 @@ class TestRestaurantApp:
         # act
         currentOutput = app.process_order(input)
         # assert
-        assert currentOutput == expectedOutput """
+        assert currentOutput == expectedOutput
         
     """ def test_when_input_night3421_then_output(self):
         # arrange
