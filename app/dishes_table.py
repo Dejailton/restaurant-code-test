@@ -18,6 +18,10 @@ class Dishes_Table:
             self.dish_type[3] = "wine"
             self.dish_type[4] = "cake"
     
+    def verification_morning_input_4(self):
+        if (self.dish_type[0] == "morning"):
+            self.dish_type[4] = "error"
+    
     def conversion_to_list(self, input: str) -> List[str]:
         input = input.split(", ")
         return input
@@ -29,3 +33,16 @@ class Dishes_Table:
         input_list.insert(0, input_list_element_0)
         return input_list
     
+    def print_dishes(self, input_list: List[str]) -> str:
+        if (len(input_list) > 4):
+            entree = int(input_list[1])
+            side = int(input_list[2])
+            drink = int(input_list[3])
+            dessert = int(input_list[4])
+            output = self.dish_type[entree] + ", " + self.dish_type[side] + ", " + self.dish_type[drink] + ", " + self.dish_type[dessert]
+        else:
+            entree = int(input_list[1])
+            side = int(input_list[2])
+            drink = int(input_list[3])
+            output = self.dish_type[entree] + ", " + self.dish_type[side] + ", " + self.dish_type[drink]
+        return output

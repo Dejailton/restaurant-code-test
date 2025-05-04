@@ -21,9 +21,7 @@ class RestaurantApp:
         input_list_ordered = dishes_table.list_order(input_list)
         dishes_table.dish_type[0] = input_list[0]
         dishes_table.verification_time_of_day()
-        entree = int(input_list_ordered[1])
-        side = int(input_list_ordered[2])
-        drink = int(input_list_ordered[3])
-        output = (dishes_table.dish_type[entree] + ", " + dishes_table.dish_type[side] + ", " + dishes_table.dish_type[drink])
+        dishes_table.verification_morning_input_4()
+        output = dishes_table.print_dishes(input_list_ordered)
         return output
     

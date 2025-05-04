@@ -59,7 +59,7 @@ class TestRestaurantApp:
         # assert
         assert currentOutput == expectedOutput
         
-    """ ef test_when_input_morning1234_then_output(self):
+    def test_when_input_morning1234_then_output(self):
         # arrange
         input = "morning, 1, 2, 3, 4"
         expectedOutput = "eggs, toast, coffee, error"
@@ -68,7 +68,7 @@ class TestRestaurantApp:
         # act
         currentOutput = app.process_order(input)
         # assert
-        assert currentOutput == expectedOutput """
+        assert currentOutput == expectedOutput
         
     """ def test_when_input_morning12333_then_output(self):
         # arrange
