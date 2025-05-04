@@ -27,7 +27,5 @@ class RestaurantApp:
         entree = int(input_list[1])
         side = int(input_list[2])
         drink = int(input_list[3])
-        if (lenght > 4):
-            dessert = int(input_list[4])
         output = (dishes_table.dish_type[entree] + ", " + dishes_table.dish_type[side] + ", " + dishes_table.dish_type[drink])
         return output
