@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Dishes_Table:
     def __init__(self):
         self.dish_type = ["day", "entree", "side", "drink", "dessert"]
@@ -15,12 +18,14 @@ class Dishes_Table:
             self.dish_type[3] = "wine"
             self.dish_type[4] = "cake"
     
-    def conversion_to_list(self, input: str):
+    def conversion_to_list(self, input: str) -> List[str]:
         input = input.split(", ")
         return input
     
-    def verification_lenght(self, input_list):
-        lenght = len(input_list)
-        return lenght
-    
+    def list_order(self, input_list: List[str]) -> List[str]:
+        input_list_element_0 = input_list[0]
+        input_list.pop(0)
+        input_list.sort()
+        input_list.insert(0, input_list_element_0)
+        return input_list
     

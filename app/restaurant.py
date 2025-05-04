@@ -18,13 +18,12 @@ class RestaurantApp:
     def process_order(self, input: str):
         dishes_table = Dishes_Table()
         input_list = dishes_table.conversion_to_list(input)
-        print(input_list[0])
+        input_list_ordered = dishes_table.list_order(input_list)
         dishes_table.dish_type[0] = input_list[0]
-        print(dishes_table.dish_type[0])
-        print(input_list[0] == dishes_table.dish_type[0])
         dishes_table.verification_time_of_day()
-        entree = int(input_list[1])
-        side = int(input_list[2])
-        drink = int(input_list[3])
+        entree = int(input_list_ordered[1])
+        side = int(input_list_ordered[2])
+        drink = int(input_list_ordered[3])
         output = (dishes_table.dish_type[entree] + ", " + dishes_table.dish_type[side] + ", " + dishes_table.dish_type[drink])
         return output
+    
