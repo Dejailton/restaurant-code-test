@@ -70,7 +70,7 @@ class TestRestaurantApp:
         # assert
         assert currentOutput == expectedOutput
         
-    """ def test_when_input_morning12333_then_output(self):
+    def test_when_input_morning12333_then_output(self):
         # arrange
         input = "morning, 1, 2, 3, 3, 3"
         expectedOutput = "eggs, toast, coffee(x3)"
@@ -79,11 +79,11 @@ class TestRestaurantApp:
         # act
         currentOutput = app.process_order(input)
         # assert
-        assert currentOutput == expectedOutput """
+        assert currentOutput == expectedOutput
         
     """ def test_when_input_night1234_then_output(self):
         # arrange
-        input = "morning, 1, 2, 3, 4"
+        input = "night, 1, 2, 3, 4"
         expectedOutput = "steak, potato, wine, cake"
         currentOutput = ""
         app = RestaurantApp()
@@ -94,7 +94,7 @@ class TestRestaurantApp:
         
     """ def test_when_input_night3421_then_output(self):
         # arrange
-        input = "morning, 3, 4, 2, 1"
+        input = "night, 3, 4, 2, 1"
         expectedOutput = "steak, potato, wine, cake"
         currentOutput = ""
         app = RestaurantApp()
@@ -105,7 +105,7 @@ class TestRestaurantApp:
     
     """ def test_when_input_night1224_then_output(self):
         # arrange
-        input = "morning, 1, 2, 2, 4"
+        input = "night, 1, 2, 2, 4"
         expectedOutput = "steak, potato(x2), cake"
         currentOutput = ""
         app = RestaurantApp()
@@ -116,7 +116,7 @@ class TestRestaurantApp:
     
     """ def test_when_input_night1235_then_output(self):
         # arrange
-        input = "morning, 1, 2, 3, 5"
+        input = "night, 1, 2, 3, 5"
         expectedOutput = "steak, potato, wine, error"
         currentOutput = ""
         app = RestaurantApp()
@@ -127,7 +127,7 @@ class TestRestaurantApp:
         
     """ def test_when_input_night1123_then_output(self):
         # arrange
-        input = "morning, 1, 1, 2, 3"
+        input = "night, 1, 1, 2, 3"
         expectedOutput = "steak, error"
         currentOutput = ""
         app = RestaurantApp()

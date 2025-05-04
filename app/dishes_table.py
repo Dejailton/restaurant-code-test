@@ -38,11 +38,27 @@ class Dishes_Table:
             entree = int(input_list[1])
             side = int(input_list[2])
             drink = int(input_list[3])
-            dessert = int(input_list[4])
-            output = self.dish_type[entree] + ", " + self.dish_type[side] + ", " + self.dish_type[drink] + ", " + self.dish_type[dessert]
+            self.input_with_repeated_coffee(input_list)
+            if (self.dish_type[3] == "coffee(x3)"):
+                output = self.dish_type[entree] + ", " + self.dish_type[side] + ", " + self.dish_type[drink]
+            else:
+                dessert = int(input_list[4])
+                output = self.dish_type[entree] + ", " + self.dish_type[side] + ", " + self.dish_type[drink] + ", " + self.dish_type[dessert]
+            
         else:
             entree = int(input_list[1])
             side = int(input_list[2])
             drink = int(input_list[3])
             output = self.dish_type[entree] + ", " + self.dish_type[side] + ", " + self.dish_type[drink]
         return output
+    
+    def input_with_repeated_coffee (self, input_list: List[str]):
+        coffee = 0
+        for item in input_list:
+            if (item == "3"):
+                coffee = coffee + 1
+        if (coffee >= 2):
+            coffee_str = str(coffee)
+            self.dish_type[3] = f"coffee(x{coffee_str})"
+        elif (coffee == 1):
+            self.dish_type[3] = "coffee"
