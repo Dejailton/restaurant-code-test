@@ -18,7 +18,6 @@ class RestaurantApp:
     def process_order(self, input: str):
         dishes_table = Dishes_Table()
         input_list = dishes_table.conversion_to_list(input)
-        lenght = dishes_table.verification_lenght(input_list)
         print(input_list[0])
         dishes_table.dish_type[0] = input_list[0]
         print(dishes_table.dish_type[0])
