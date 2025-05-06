@@ -54,8 +54,8 @@ class Dishes_Table(Morning, Night):
                             break
                     case "2":
                         if validation > 1 and validation < 49:
-                            if (self.dish_type.append(f"potato(x{validation})") == None):
-                                validation = 51
+                            self.dish_type.append(f"potato(x{validation})")
+                            validation = 51
                         elif validation < 1:
                             self.dish_type.append(self.night.get_side())
                     case "3":
