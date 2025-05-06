@@ -23,6 +23,7 @@ class Dishes_Table(Morning, Night):
             self.return_dishes_night(input_list)
             
     def return_dishes_morning(self, input_list):
+        validation = self.verification_quantity_request_dishes_morning(input_list)
         if self.dish_type[0] == "morning":
             for i in input_list:
                 match i:
@@ -31,9 +32,13 @@ class Dishes_Table(Morning, Night):
                     case "2":
                         self.dish_type.append(self.morning.get_side())
                     case "3":
-                        self.dish_type.append(self.morning.get_drink())
+                        if validation <= 1:
+                            self.dish_type.append(self.morning.get_drink())
                     case "4":
                         self.dish_type.append(self.morning.get_dessert())
+            
+            if validation != False:
+                self.dish_type.append(f"coffee(x{validation})")
                         
     def return_dishes_night(self, input_list):
         if self.dish_type[0] == "night":
@@ -48,22 +53,15 @@ class Dishes_Table(Morning, Night):
                     case "4":
                         self.dish_type.append(self.night.get_dessert())
                         
-    def verification_quantity_request_dishes(self, input_list):
-        entree = 0
-        side = 0
+    def verification_quantity_request_dishes_morning(self, input_list):
         drink = 0
-        dessert = 0
         for i in input_list:
-            match i:
-                case "1":
-                    entree += 1
-                case "2":
-                    side += 1
-                case "3":
-                    drink += 1
-                case "4":
-                    dessert += 1
-        return entree, side, drink, dessert
+            if (i == "3"):
+                drink += 1
+        if drink > 1:
+            return drink
+        else:
+            return False
                     
     def conversion_to_list(self, input: str) -> List[str]:
         input = input.split(", ")
