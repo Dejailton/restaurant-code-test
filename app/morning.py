@@ -21,3 +21,5 @@ class Morning:
     def get_dessert(self) -> str:
         self.dessert = "error"
         return self.dessert
+    def get_error(self) -> str:
+        return "error"
