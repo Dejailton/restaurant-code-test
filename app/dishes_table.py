@@ -36,7 +36,7 @@ class Dishes_Table(Morning, Night):
                             self.dish_type.append(self.morning.get_drink())
                     case "4":
                         self.dish_type.append(self.morning.get_dessert())
-            if validation != False:
+            if validation:
                 self.dish_type.append(f"coffee(x{validation})")
                         
     def return_dishes_night(self, input_list):
