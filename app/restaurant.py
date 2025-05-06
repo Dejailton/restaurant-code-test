@@ -1,4 +1,4 @@
-from .dishes_table import Dishes_Table
+from .dishes_table import DishTable
 
 class RestaurantApp:
     def __init__(self):
@@ -16,7 +16,9 @@ class RestaurantApp:
         print(f"The restaurant is {self.status} !")
         
     def process_order(self, input: str):
-        dishes_table = Dishes_Table()
+        ## TODO:get period and remove from input
+        period = ''
+        dishes_table = DishTable(period=period)
         input_list = dishes_table.conversion_to_list(input)
         input_list_ordered = dishes_table.list_order(input_list)
         input_list_lower = dishes_table.lower_case_input(input_list_ordered)
