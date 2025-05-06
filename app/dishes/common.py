@@ -14,9 +14,16 @@ class CommonDishes:
         return self._menu[index]
 
     def get_order_items(self, input_list: list[str]) -> str:        
+        
+        if len(input_list) == 0:
+            return ''
+                
         items = [] 
         
-        for input in input_list:       
-            items.append(self._get_item(int(input)))
+        for input in input_list:
+            item = self._get_item(int(input))
+            items.append(item)
+            if item == "error":
+                break            
        
         return ", ".join(items)

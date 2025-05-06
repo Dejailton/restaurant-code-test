@@ -20,10 +20,9 @@ class DishesManager:
         input_list.pop(0)
         input_list.sort()
         
-        if len(input_list) == 1:
-            return period
-         
         for dish in self._dishes:
             if dish.get_period() == period:
-                return dish.get_order_items(input_list)                  
+                return dish.get_order_items(input_list)
+        
+        return "error"
     
