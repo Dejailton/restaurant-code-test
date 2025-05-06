@@ -20,3 +20,6 @@ class Night:
     
     def get_dessert(self) -> str:
         return self.dessert
+    
+    def get_error(self) -> str:
+        return "error"
