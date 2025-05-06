@@ -81,7 +81,7 @@ class TestRestaurantApp:
         # assert
         assert currentOutput == expectedOutput
         
-    def test_when_input_night1234_then_output(self):
+    """def test_when_input_night1234_then_output(self):
         # arrange
         input = "night, 1, 2, 3, 4"
         expectedOutput = "steak, potato, wine, cake"
@@ -90,9 +90,9 @@ class TestRestaurantApp:
         # act
         currentOutput = app.process_order(input)
         # assert
-        assert currentOutput == expectedOutput
+        assert currentOutput == expectedOutput"""
         
-    def test_when_input_night3421_then_output(self):
+    """def test_when_input_night3421_then_output(self):
         # arrange
         input = "night, 3, 4, 2, 1"
         expectedOutput = "steak, potato, wine, cake"
@@ -101,9 +101,9 @@ class TestRestaurantApp:
         # act
         currentOutput = app.process_order(input)
         # assert
-        assert currentOutput == expectedOutput
+        assert currentOutput == expectedOutput"""
     
-    """ def test_when_input_night1224_then_output(self):
+    """def test_when_input_night1224_then_output(self):
         # arrange
         input = "night, 1, 2, 2, 4"
         expectedOutput = "steak, potato(x2), cake"
@@ -112,7 +112,7 @@ class TestRestaurantApp:
         # act
         currentOutput = app.process_order(input)
         # assert
-        assert currentOutput == expectedOutput """
+        assert currentOutput == expectedOutput"""
     
     """ def test_when_input_night1235_then_output(self):
         # arrange

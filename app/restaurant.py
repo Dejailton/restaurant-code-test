@@ -19,9 +19,8 @@ class RestaurantApp:
         dishes_table = Dishes_Table()
         input_list = dishes_table.conversion_to_list(input)
         input_list_ordered = dishes_table.list_order(input_list)
-        dishes_table.dish_type[0] = input_list[0]
-        dishes_table.verification_time_of_day()
-        dishes_table.verification_morning_input_4()
-        output = dishes_table.print_dishes(input_list_ordered)
+        input_list_lower = dishes_table.lower_case_input(input_list_ordered)
+        dishes_table.verification_time_of_day(input_list_lower)
+        dishes_table_str = dishes_table.convert_to_str()
+        output = dishes_table_str
         return output
-    
