@@ -13,12 +13,10 @@ class CommonDishes:
         
         return self._menu[index]
 
-    def get_items(self, input:str) -> str:
-        input = input.replace(" ", "")
-        input_list = input.split(",")
+    def get_order_items(self, input_list: list[str]) -> str:        
         items = [] 
         
-        for i in input_list:       
-            items.append(self._get_item(int(i)))        
+        for input in input_list:       
+            items.append(self._get_item(int(input)))
        
         return ", ".join(items)
