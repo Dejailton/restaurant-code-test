@@ -41,11 +41,17 @@ class Dishes_Table(Morning, Night):
                         
     def return_dishes_night(self, input_list):
         validation = self.verification_quantity_request_side_night(input_list)
+        count = 0
         if self.dish_type[0] == "night":
             for i in input_list:
                 match i:
                     case "1":
-                        self.dish_type.append(self.night.get_entree())
+                        if count == 0:
+                            count += 1
+                            self.dish_type.append(self.night.get_entree())
+                        elif count == 1:
+                            self.dish_type.append(self.night.get_error())
+                            break
                     case "2":
                         if validation > 1 and validation < 49:
                             if (self.dish_type.append(f"potato(x{validation})") == None):
