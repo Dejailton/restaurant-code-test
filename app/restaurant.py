@@ -20,4 +20,4 @@ class RestaurantApp:
         
     def process_order(self, input: str):
         manager = DishesManager()        
-        return manager.get_order_items(input)        
+        return manager.process_order(input)        

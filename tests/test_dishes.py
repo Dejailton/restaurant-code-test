@@ -1,6 +1,46 @@
 from app.dishes_manager import DishesManager
 
 class TestDishTable:     
+    
+    def test_when_input_empty_then_output(self):
+        # arrange
+        input = ""        
+        expectedItems = "error"        
+        manager = DishesManager()
+        # act
+        currentOutput = manager.process_order(input)
+        # assert        
+        assert currentOutput == expectedItems
+        
+    def test_when_input_morning_noitems_then_output(self):
+        # arrange
+        input = "morning"        
+        expectedItems = ""        
+        manager = DishesManager()
+        # act
+        currentOutput = manager.process_order(input)
+        # assert        
+        assert currentOutput == expectedItems
+        
+    def test_when_input_night_noitems_then_output(self):
+        # arrange
+        input = "night"        
+        expectedItems = ""        
+        manager = DishesManager()
+        # act
+        currentOutput = manager.process_order(input)
+        # assert        
+        assert currentOutput == expectedItems
+    
+    def test_when_input_afternoon_noitems_then_output(self):
+        # arrange
+        input = "afternoon"        
+        expectedItems = "error"        
+        manager = DishesManager()
+        # act
+        currentOutput = manager.process_order(input)
+        # assert        
+        assert currentOutput == expectedItems
         
     def test_when_input_morning_then_output(self):
         # arrange
@@ -8,7 +48,7 @@ class TestDishTable:
         expectedItems = "eggs, toast, coffee"        
         manager = DishesManager()
         # act
-        currentOutput = manager.get_order_items(input)
+        currentOutput = manager.process_order(input)
         # assert        
         assert currentOutput == expectedItems
         
@@ -18,7 +58,7 @@ class TestDishTable:
         expectedItems = "eggs, toast, coffee"        
         manager = DishesManager()
         # act
-        currentOutput = manager.get_order_items(input)
+        currentOutput = manager.process_order(input)
         # assert        
         assert currentOutput == expectedItems
         
@@ -28,6 +68,6 @@ class TestDishTable:
         expectedItems = "eggs, toast, coffee"        
         manager = DishesManager()
         # act
-        currentOutput = manager.get_order_items(input)
+        currentOutput = manager.process_order(input)
         # assert        
         assert currentOutput == expectedItems

@@ -9,7 +9,7 @@ class DishesManager:
     def get_period(self) -> str:
         return self._period.lower()
     
-    def get_order_items(self, input: str) -> str:
+    def process_order(self, input: str) -> str:
         input = input.replace(" ", "")
         input_list = input.split(",")
         
@@ -22,7 +22,7 @@ class DishesManager:
         
         for dish in self._dishes:
             if dish.get_period() == period:
-                return dish.get_order_items(input_list)
+                return dish.process_order(input_list)
         
         return "error"
     
