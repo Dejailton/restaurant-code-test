@@ -1,4 +1,3 @@
-
 class ExampleApp:
     def calculate(self):
         return True
