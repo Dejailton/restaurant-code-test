@@ -22,7 +22,15 @@ class Formatter:
         input_list.pop(0)
         input_list.sort()
         return input_list
+    
+    def get_length(self, input_list: List[str]) -> int:
+        return len(input_list)
         
+    def equal_index(self, input_list: List[str]):
+        for i in range(len(input_list)):
+            input_list[i] = int(input_list[i] - 1)
+        return input_list
+    
     def convert_to_str(self, input) -> str:
         input_str = ", ".join(input)
         return input_str
