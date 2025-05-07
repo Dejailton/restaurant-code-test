@@ -1,4 +1,4 @@
-from .common import CommonDishes
+from app.dishes.common import CommonDishes
 
 class MorningDishes(CommonDishes):
     def __init__(self):

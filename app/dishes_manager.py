@@ -1,20 +1,16 @@
-from .dishes.morning import MorningDishes
-from .dishes.night import NightDishes
-
+from app.dishes.morning import MorningDishes
+from app.dishes.night import NightDishes
 
 class DishesManager:
-    def __init__(self):          
-        self._dishes = [MorningDishes(), NightDishes()]        
-        
-    def get_period(self) -> str:
-        return self._period.lower()
-    
+    def __init__(self):
+        self._dishes = [MorningDishes(), NightDishes()]      
+      
     def process_order(self, input: str) -> str:
+        if input == '':
+            return "error"
+        
         input = input.replace(" ", "")
         input_list = input.split(",")
-        
-        if len(input_list) == 0:
-            return "error"
         
         period: str = input_list[0].lower()
         input_list.pop(0)

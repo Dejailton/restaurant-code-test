@@ -12,6 +12,16 @@ class TestDishTable:
         # assert        
         assert currentOutput == expectedItems
         
+    def test_when_input_comma_then_output(self):
+        # arrange
+        input = ","        
+        expectedItems = "error"        
+        manager = DishesManager()
+        # act
+        currentOutput = manager.process_order(input)
+        # assert        
+        assert currentOutput == expectedItems
+        
     def test_when_input_morning_noitems_then_output(self):
         # arrange
         input = "morning"        

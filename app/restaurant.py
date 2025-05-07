@@ -1,7 +1,4 @@
-
-
 from app.dishes_manager import DishesManager
-
 
 class RestaurantApp:
     def __init__(self):
