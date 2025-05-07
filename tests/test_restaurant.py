@@ -47,16 +47,16 @@ class TestRestaurantApp:
         # assert
         assert currentOutput == expectedOutput
         
-    # def test_when_input_night_then_output(self):
-    #     # arrange
-    #     input = "night"
-    #     expectedOutput = ""
-    #     currentOutput = ""
-    #     app = RestaurantApp()
-    #     # act
-    #     currentOutput = app.process_order(input)
-    #     # assert
-    #     assert currentOutput == expectedOutput
+    def test_when_input_night_then_output(self):
+        # arrange
+        input = "night"
+        expectedOutput = ""
+        currentOutput = ""
+        app = RestaurantApp()
+        # act
+        currentOutput = app.process_order(input)
+        # assert
+        assert currentOutput == expectedOutput
         
     # def test_when_input_night_upper_then_output(self):
     #     # arrange
