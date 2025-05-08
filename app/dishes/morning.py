@@ -5,3 +5,5 @@ class MorningDishes(CommonDishes):
         period = "morning"        
         menu = ['eggs', 'toast', 'coffee']
         super().__init__(period=period, menu=menu)
+        
+    

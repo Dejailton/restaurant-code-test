@@ -8,3 +8,6 @@ class CommonDishes:
         
     def get_period(self) -> str:
         return self._period
+    
+    def get_menu(self) -> list:
+        return self._menu

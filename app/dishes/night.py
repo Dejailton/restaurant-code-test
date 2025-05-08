@@ -5,3 +5,4 @@ class NightDishes(CommonDishes):
         period = "night"        
         menu = ['steak', 'potato', 'wine', 'cake']
         super().__init__(period=period, menu=menu)
+        
