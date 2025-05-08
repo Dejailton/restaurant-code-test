@@ -14,8 +14,7 @@ class CommonDishes:
         return self._menu_options[index]
 
     def process_order(self, input_list: list[str]) -> str:        
-        if len(input_list) == 0:
-            return ''
+        input_list.sort()
         input_dict = self._get_input_repeat_count(input_list=input_list)
         option_list = self._get_option_list(input_dict=input_dict)       
         return ", ".join(option_list)
