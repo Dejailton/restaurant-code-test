@@ -24,11 +24,13 @@ class DishesManager(Formatter):
         menu_items = dishes.get_menu()
         menu_length = self.get_length(menu_items)
         input_list_lenght = self.get_length(input_list)
+        
+        
         if input_list_lenght < 0 or input_list_lenght > menu_length:
             list_menu.append("error")
-            
         for i in list_formatter:
             list_menu.append(menu_items[i])
+        
         return list_menu
                 
     def get_order_items(self, input: str) -> str:

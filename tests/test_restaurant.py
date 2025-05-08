@@ -81,27 +81,27 @@ class TestRestaurantApp:
         assert currentOutput == expectedOutput
         
         
-    # def test_when_input_morning213_then_output(self):
-    #     # arrange
-    #     input = "morning, 2, 1, 3"
-    #     expectedOutput = "eggs, toast, coffee"
-    #     currentOutput = ""
-    #     app = RestaurantApp()
-    #     # act
-    #     currentOutput = app.process_order(input)
-    #     # assert
-    #     assert currentOutput == expectedOutput
+    def test_when_input_morning213_then_output(self):
+        # arrange
+        input = "morning, 2, 1, 3"
+        expectedOutput = "eggs, toast, coffee"
+        currentOutput = ""
+        app = RestaurantApp()
+        # act
+        currentOutput = app.process_order(input)
+        # assert
+        assert currentOutput == expectedOutput
         
-    # def test_when_input_morning1234_then_output(self):
-    #     # arrange
-    #     input = "morning, 1, 2, 3, 4"
-    #     expectedOutput = "eggs, toast, coffee, error"
-    #     currentOutput = ""
-    #     app = RestaurantApp()
-    #     # act
-    #     currentOutput = app.process_order(input)
-    #     # assert
-    #     assert currentOutput == expectedOutput
+    def test_when_input_morning1234_then_output(self):
+        # arrange
+        input = "morning, 1, 2, 3, 4"
+        expectedOutput = "eggs, toast, coffee, error"
+        currentOutput = ""
+        app = RestaurantApp()
+        # act
+        currentOutput = app.process_order(input)
+        # assert
+        assert currentOutput == expectedOutput
         
     # def test_when_input_morning12333_then_output(self):
     #     # arrange

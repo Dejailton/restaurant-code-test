@@ -2,8 +2,8 @@ from .common import CommonDishes
 
 class MorningDishes(CommonDishes):
     def __init__(self):
-        period = "morning"        
-        menu = ['eggs', 'toast', 'coffee']
+        period = "morning"
+        menu = ['eggs', 'toast', 'coffee', 'error']
         super().__init__(period=period, menu=menu)
         
     
