@@ -1,4 +1,3 @@
-
 import pytest
 from app.restaurant import RestaurantApp
 
@@ -65,10 +64,10 @@ class TestRestaurantApp:
         ("night, 2, 1", "steak, potato"), 
         ("night, 1", "steak"),
     ])
-def test_when_input_then_validate_output(self, input:str, expectedOutput:str):
-    # arrange
-    app = RestaurantApp()
-    # act
-    currentValue = app.get_order_items(input)
-    # assert
-    assert currentValue == expectedOutput       
+    def test_when_input_then_validate_output(self, input:str, expectedOutput:str):
+        # arrange
+        app = RestaurantApp()
+        # act
+        currentOutput = app.process_order(input)
+        # assert
+        assert currentOutput == expectedOutput
