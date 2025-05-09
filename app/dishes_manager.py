@@ -7,12 +7,12 @@ class DishesManager(Formatter):
     
     def manager_output(self, input:str) -> str:
         match input:
-                case "":
-                    return "error"
                 case "morning":
                     return ""
                 case "night":
                     return ""
+                case _:
+                    return "error"
                 
     def process_order(self, input: str):
         input = self.format_lower(input)
