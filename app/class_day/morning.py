@@ -1,10 +1,7 @@
-class Morning:
+from app.manager_day.manager import DayManager
+
+class Morning(DayManager):
     def __init__(self):
-        self._period = "morning"
-        self._dishes = ["eggs", "toast", "coffee"]
-        
-    def get_period(self):
-        return self._period
-    
-    def get_dishes(self):
-        return self._dishes
+        self.period = "morning"
+        self.dishes = ["eggs", "toast", "coffee"]
+        super().__init__(period=period, dishes=dishes)

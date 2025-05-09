@@ -4,13 +4,14 @@ class DishesManager(Morning):
     def __init__(self):
         self.dishes = {}
     
-    def verify_input(self, input:str) -> str:
-        if input == "morning":
-            return super().get_period()
-        else:
-            return "error"
+    def manager_output(self, input:str) -> str:
+        match input:
+                case "":
+                    return "error"
+                case "morning":
+                    return ""
     def process_order(self, input: str):
-        output = self.verify_input(input)
+        output = self.manager_output(input)
         return output
         
         
