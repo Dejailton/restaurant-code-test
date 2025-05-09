@@ -4,4 +4,7 @@ class DayManager:
         self._dishes = dishes
 
     def get_day(self):
-        return self.day
+        return self._day
+    
+    def get_dishes(self):
+        return self._dishes
