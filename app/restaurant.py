@@ -16,5 +16,4 @@ class RestaurantApp:
         print(f"The restaurant is {self.status} !")
         
     def process_order(self, input: str):
-        manager = DishesManager()
-        return manager.get_order_items(input)
+        
