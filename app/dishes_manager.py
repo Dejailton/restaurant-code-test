@@ -11,6 +11,8 @@ class DishesManager(Formatter):
                     return "error"
                 case "morning":
                     return ""
+                case "night":
+                    return ""
                 
     def process_order(self, input: str):
         input = self.format_lower(input)
