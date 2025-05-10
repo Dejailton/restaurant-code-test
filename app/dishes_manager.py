@@ -1,4 +1,4 @@
-from .class_day.morning import Morning
+#from .class_day.morning import Morning comentado temporariamente
 from .util.formatter import Formatter
 
 class DishesManager(Formatter):
