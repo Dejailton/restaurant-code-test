@@ -1,4 +1,4 @@
-import pytest
+#import pytest #comentado, utilizando test_dishes como base de testes
 from app.restaurant import RestaurantApp
 
 class TestRestaurantApp:
