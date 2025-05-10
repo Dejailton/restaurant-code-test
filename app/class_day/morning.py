@@ -4,4 +4,4 @@ class Morning(DayManager):
     def __init__(self):
         self.period = "morning"
         self.dishes = ["eggs", "toast", "coffee"]
-        super().__init__(period=period, dishes=dishes)
+        super().__init__(period=self.period, dishes=self.dishes)
