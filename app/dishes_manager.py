@@ -15,7 +15,8 @@ class DishesManager(Formatter):
     def menu_selection(self, input: List[str]) -> List[str]:
         day = self.verify_period(input)
         day = day.get_dishes()
-        for dish in input[1:]:
+        input = self.list_order(input)
+        for dish in input:
             dishe = day[int(dish)-1]
             self.dishes.append(dishe)
     def manager_output(self, input:str) -> str:
