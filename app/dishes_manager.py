@@ -21,9 +21,9 @@ class DishesManager(Formatter):
     def manager_output(self, input:str) -> str:
         if len(input) == 1:
             match input:
-                    case "morning":
+                    case ["morning"]:
                         return ""
-                    case "night":
+                    case ["night"]:
                         return ""
                     case _:
                         return "error"
@@ -35,7 +35,7 @@ class DishesManager(Formatter):
         input = self.format_lower(input)
         list = self.format_list(input)
         output = self.manager_output(list)
-        if len(input) == 1 or input == "error":
+        if len(list) == 1 or output == "error":
             return output
         elif len(input) >= 2:
             output = self.format_output(self.dishes)
