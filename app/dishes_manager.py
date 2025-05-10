@@ -36,7 +36,9 @@ class DishesManager(Formatter):
         input = self.format_lower(input)
         list = self.format_list(input)
         output = self.manager_output(list)
-        if len(list) == 1 or output == "error":
+        if len(list) <= 1 or output == "error":
+            if list[0] == "1":
+                return self.format_output(self.dishes)
             return output
         elif len(input) >= 2:
             output = self.format_output(self.dishes)
