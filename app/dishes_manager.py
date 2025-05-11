@@ -28,6 +28,13 @@ class DishesManager(Formatter):
                     self.dishes.clear()
                     self.dishes.extend(repeat)
                     break
+            elif period == "night" and dish == "2":
+                count += 1
+                if count > 1:
+                    repeat = day_class.dishe_sum_autorized(input, period, day_class)
+                    self.dishes.clear()
+                    self.dishes.extend(repeat)
+                    break
             self.dishes.append(dishe)
     def manager_output(self, input:str) -> str:
         if len(input) == 1:

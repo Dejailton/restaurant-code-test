@@ -29,5 +29,12 @@ class DayManager:
             for i in input:
                 if i == "2":
                     count += 1
-                    repeat = f"potato(x{count})"
+                    if count >= 2:
+                        if f"potato(x{count - 1})" in dishes:
+                            dishes.remove(f"potato(x{count - 1})")
+                        repeat = f"potato(x{count})"
+                        dishes.append(repeat)
+                dishes.append(day.get_dishes()[int(i)-1])
+                while "potato" in dishes:
+                    dishes.remove("potato")
         return dishes
