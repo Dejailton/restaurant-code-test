@@ -20,6 +20,9 @@ class DishesManager(Formatter):
         day = day.get_dishes()
         input = self.list_order(input)
         for dish in input:
+            if int(dish) >= 5 or int(dish) <= 0:
+                self.dishes.append("error")
+                break
             dishe = day[int(dish)-1]
             if period == "morning" and dish == "3":
                 count += 1
@@ -35,6 +38,7 @@ class DishesManager(Formatter):
                     self.dishes.clear()
                     self.dishes.extend(repeat)
                     break
+            
             self.dishes.append(dishe)
     def manager_output(self, input:str) -> str:
         if len(input) == 1:
