@@ -23,6 +23,10 @@ class DishesManager(Formatter):
             if int(dish) >= 5 or int(dish) <= 0:
                 self.dishes.append("error")
                 break
+            continue_for = day_class.dishe_uniq(self.dishes, dish, period)
+            if continue_for == "error":
+                self.dishes.append("error")
+                break
             dishe = day[int(dish)-1]
             if period == "morning" and dish == "3":
                 count += 1
@@ -64,3 +68,5 @@ class DishesManager(Formatter):
         elif len(input) >= 2:
             output = self.format_output(self.dishes)
             return output
+        
+        

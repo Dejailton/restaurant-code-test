@@ -38,3 +38,31 @@ class DayManager:
                 while "potato" in dishes:
                     dishes.remove("potato")
         return dishes
+
+    def dishe_uniq(self, dishes: list, input, period):
+        uniq = True
+        if period == "morning":
+            for dish in dishes:
+                if dish == "eggs" and input == "1":
+                    uniq = False
+                    return "error"
+                elif dish == "toast" and input == "2":
+                    uniq = False
+                    return "error"
+                elif dish == "error" and input == "4":
+                    break
+        elif period == "night":
+            for dish in dishes:
+                if dish == "steak" and input == "1":
+                    uniq = False
+                    return "error"
+                elif dish == "wine" and input == "3":
+                    uniq = False
+                    return "error"
+                elif dish == "cake" and input == "4":
+                    uniq = False
+                    return "error"
+        if uniq:
+            return True
+        else:
+            return False
