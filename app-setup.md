@@ -11,7 +11,7 @@
 ```powershell
 python -m pip install --upgrade pip
 python -m venv venv
-./venv/script/activate 
+./venv/scripts/activate
 pip install -r requirements.txt
 pytest --cov=./
 
