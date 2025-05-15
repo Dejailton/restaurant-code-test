@@ -1,4 +1,5 @@
-#from .class_day.morning import Morning #comentado temporáriamente
+#from .class_day.morning import Morning comentado temporariamente
+
 from .util.formatter import Formatter
 
 class DishesManager(Formatter):
@@ -7,9 +8,9 @@ class DishesManager(Formatter):
     
     def manager_output(self, input:str) -> str:
         match input:
-                case "":
-                    return "error"
                 case "morning":
+                    return ""
+                case "night":
                     return ""
                 case _:
                     return "error"

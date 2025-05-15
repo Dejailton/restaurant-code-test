@@ -8,9 +8,9 @@ class TestDishTable:
         (",", "error"), 
         ("morning", ""), 
         ("MORNING", ""), 
-        #("night", ""), 
-        #("NIGHT", ""), 
-        #("afternoon", "error"), 
+        ("night", ""), 
+        ("NIGHT", ""), 
+        ("afternoon", "error"), 
         #("morning, 1, 2, 3", "eggs, toast, coffee"), 
         #("morning, 2, 1, 3", "eggs, toast, coffee"), 
         #("morning, 1, 2, 3, 4", "eggs, toast, coffee, error"), 
@@ -31,7 +31,7 @@ class TestDishTable:
         #("night, 3, 2, 1", "steak, potato, wine"), 
         #("night, 2, 1", "steak, potato"), 
         #("night, 1", "steak"), 
-         
+
     ])
     def test_when_input_then_validate_output(self, input:str, expectedOutput:str):
         # arrange                
