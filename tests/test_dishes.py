@@ -34,8 +34,8 @@ class TestDishTable:
         ("night, 4, 3, 2, 1", "steak, potato, wine, cake"), 
         ("night, 3, 2, 1", "steak, potato, wine"), 
         ("night, 2, 1", "steak, potato"), 
-        ("night, 1", "steak"), 
-         
+        ("night, 1", "steak"),          
+
     ])
     def test_when_input_then_validate_output(self, input:str, expectedOutput:str):
         # arrange                

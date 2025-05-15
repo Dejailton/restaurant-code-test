@@ -53,3 +53,4 @@ class DishesManager(Formatter):
         elif len(input) >= 2:
             output = self.format_output(self.dishes)
             return output
+
