@@ -1,45 +1,40 @@
+from typing import List
+
+
 class DayManager:
-    def __init__(self, period, dishes):
+    def __init__(self, period, dishes, repetitive_dish):
         self._day = period
         self._dishes = dishes
+        self._repetitive_dish = repetitive_dish
 
-    def get_day(self):
+    def get_day(self) -> str:
         return self._day
     
-    def get_dishes(self):
+    def get_dishes(self) -> List[str]:
         return self._dishes
     
-    def dishe_sum_autorized(self, input, period, day: object):
+    def get_repetitive_dish(self) -> List[str]:
+        return self._repetitive_dish
+        
+    def get_output_autorized(self, input: List[str]) -> List[str]:
         count = 0
         dishes = []
-        repeat = ""
-        if period == "morning":
-            for i in input:
-                if i == "3":
-                    count += 1
-                    if count >= 2:
-                        if f"coffee(x{count - 1})" in dishes:
-                            dishes.remove(f"coffee(x{count - 1})")
-                        repeat = f"coffee(x{count})"
-                        dishes.append(repeat)
-                dishes.append(day.get_dishes()[int(i)-1])
-                while "coffee" in dishes:
-                    dishes.remove("coffee")
-        elif period == "night":
-            for i in input:
-                if i == "2":
-                    count += 1
-                    if count >= 2:
-                        if f"potato(x{count - 1})" in dishes:
-                            dishes.remove(f"potato(x{count - 1})")
-                        repeat = f"potato(x{count})"
-                        dishes.append(repeat)
-                dishes.append(day.get_dishes()[int(i)-1])
-                while "potato" in dishes:
-                    dishes.remove("potato")
+        repeat = self.get_repetitive_dish()
+        
+        for i in input:
+            if i == repeat[1]:
+                count += 1
+                if count >= 2:
+                    if f"{repeat[0]}(x{count - 1})" in dishes:
+                        dishes.remove(f"{repeat[0]}(x{count - 1})")
+                    dish = f"{repeat[0]}(x{count})"
+                    dishes.append(dish)
+            dishes.append(self.get_dishes()[int(i)-1])
+            while "coffee" in dishes or "potato" in dishes:
+                        dishes.remove(f"{repeat[0]}")
         return dishes
 
-    def dishe_uniq(self, dishes: list, input, period):
+    def dishe_uniq(self, dishes: List[str], input, period) -> bool:
         uniq = True
         if period == "morning":
             for dish in dishes:

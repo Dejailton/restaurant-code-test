@@ -12,35 +12,27 @@ class DishesManager(Formatter):
             return Morning()
         elif period == "night":
             return Night()
-    def menu_selection(self, input: List[str]) -> List[str]:
+    def menu_selection(self, input):
         period = input[0]
         day = self.verify_period(period)
         count = 0
-        day_class = day
-        day = day.get_dishes()
+        dishes = day.get_dishes()
         input = self.list_order(input)
         for dish in input:
             if int(dish) >= 5 or int(dish) <= 0:
                 self.dishes.append("error")
                 break
-            continue_for = day_class.dishe_uniq(self.dishes, dish, period)
+            continue_for = day.dishe_uniq(self.dishes, dish, period)
             if continue_for == "error":
                 self.dishes.append("error")
                 break
-            dishe = day[int(dish)-1]
-            if period == "morning" and dish == "3":
+            dishe = dishes[int(dish)-1]
+            if period == "morning" and dish == "3" or period == "night" and dish == "2":
                 count += 1
                 if count > 1:
-                    repeat = day_class.dishe_sum_autorized(input, period, day_class)
+                    dishes = day.get_output_autorized(input)
                     self.dishes.clear()
-                    self.dishes.extend(repeat)
-                    break
-            elif period == "night" and dish == "2":
-                count += 1
-                if count > 1:
-                    repeat = day_class.dishe_sum_autorized(input, period, day_class)
-                    self.dishes.clear()
-                    self.dishes.extend(repeat)
+                    self.dishes.extend(dishes)
                     break
             
             self.dishes.append(dishe)
