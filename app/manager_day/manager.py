@@ -28,9 +28,9 @@ class DayManager:
                         dishes.remove(f"{dish_repeat[0]}(x{count - 1})")
                     dish = f"{dish_repeat[0]}(x{count})"
                     dishes.append(dish)
-            dishes.append(self.get_dishes()[int(i)-1])
-            while dish_repeat[0] in dishes:
-                        dishes.remove(f"{dish_repeat[0]}")
+            else:
+                dishes.append(self.get_dishes()[int(i)-1])
+
         return dishes
     
     def dish_verify(self, dishes: List[str], dishes_on_the_menu, dish) -> bool:
