@@ -34,30 +34,12 @@ class DayManager:
                         dishes.remove(f"{dish_repeat[0]}")
         return dishes
 
-    def dishe_uniq(self, dishes: List[str], input, period) -> bool:
+    def dish_uniq(self, dishes: List[str], dishes_on_the_menu, dish):
         uniq = True
-        if period == "morning":
-            for dish in dishes:
-                if dish == "eggs" and input == "1":
-                    uniq = False
-                    return "error"
-                elif dish == "toast" and input == "2":
-                    uniq = False
-                    return "error"
-                elif dish == "error" and input == "4":
-                    break
-        elif period == "night":
-            for dish in dishes:
-                if dish == "steak" and input == "1":
-                    uniq = False
-                    return "error"
-                elif dish == "wine" and input == "3":
-                    uniq = False
-                    return "error"
-                elif dish == "cake" and input == "4":
-                    uniq = False
-                    return "error"
-        if uniq:
-            return True
-        else:
-            return False
+        dish = dishes_on_the_menu[int(dish)-1]
+        dish_repeat = self.get_repetitive_dish()
+        if dish in dishes:
+            if dish == dish_repeat[0]:
+                return uniq
+            else:
+                return "error"

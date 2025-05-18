@@ -16,17 +16,17 @@ class DishesManager(Formatter):
         period = input[0]
         day = self.verify_period(period)
         count = 0
-        dishes = day.get_dishes()
+        dishes_on_the_menu = day.get_dishes()
         input = self.list_order(input)
         for dish in input:
             if int(dish) >= 5 or int(dish) <= 0:
                 self.dishes.append("error")
                 break
-            continue_for = day.dishe_uniq(self.dishes, dish, period)
+            continue_for = day.dish_uniq(self.dishes, dishes_on_the_menu, dish)
             if continue_for == "error":
                 self.dishes.append("error")
                 break
-            dishe = dishes[int(dish)-1]
+            get_dish = dishes_on_the_menu[int(dish)-1]
             if period == "morning" and dish == "3" or period == "night" and dish == "2":
                 count += 1
                 if count > 1:
@@ -35,7 +35,7 @@ class DishesManager(Formatter):
                     self.dishes.extend(dishes)
                     break
             
-            self.dishes.append(dishe)
+            self.dishes.append(get_dish)
     def manager_output(self, input:str) -> str:
         if len(input) == 1:
             match input:
