@@ -12,6 +12,7 @@ class DishesManager(Formatter):
             return Morning()
         elif period == "night":
             return Night()
+        
     def menu_selection(self, input):
         period = input[0]
         day = self.verify_period(period)
@@ -19,14 +20,8 @@ class DishesManager(Formatter):
         dishes_on_the_menu = day.get_dishes()
         input = self.list_order(input)
         for dish in input:
-            if int(dish) >= 5 or int(dish) <= 0:
-                self.dishes.append("error")
-                break
-            continue_for = day.dish_uniq(self.dishes, dishes_on_the_menu, dish)
-            if continue_for == "error":
-                self.dishes.append("error")
-                break
-            get_dish = dishes_on_the_menu[int(dish)-1]
+            verify_dish = day.dish_verify(self.dishes, dishes_on_the_menu, dish)
+
             if period == "morning" and dish == "3" or period == "night" and dish == "2":
                 count += 1
                 if count > 1:
@@ -34,8 +29,14 @@ class DishesManager(Formatter):
                     self.dishes.clear()
                     self.dishes.extend(dishes)
                     break
+                
+            if verify_dish:
+                self.dishes.append("error")
+                break
             
+            get_dish = dishes_on_the_menu[int(dish)-1]
             self.dishes.append(get_dish)
+            
     def manager_output(self, input:str) -> str:
         if len(input) == 1:
             match input:

@@ -33,13 +33,17 @@ class DayManager:
             while "coffee" in dishes or "potato" in dishes:
                         dishes.remove(f"{dish_repeat[0]}")
         return dishes
-
-    def dish_uniq(self, dishes: List[str], dishes_on_the_menu, dish):
-        uniq = True
-        dish = dishes_on_the_menu[int(dish)-1]
+    
+    def dish_verify(self, dishes: List[str], dishes_on_the_menu, dish):
+        dish_int = int(dish)
         dish_repeat = self.get_repetitive_dish()
-        if dish in dishes:
-            if dish == dish_repeat[0]:
-                return uniq
-            else:
-                return "error"
+        if dish_int >= 5 or dish_int <= 0:
+            return True
+        else:
+            dish = dishes_on_the_menu[int(dish)-1]
+            if dish in dishes:
+                if dish == dish_repeat[0]:
+                    return False
+                else:
+                    return True
+        
