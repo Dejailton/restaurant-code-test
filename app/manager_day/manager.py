@@ -19,19 +19,19 @@ class DayManager:
     def get_output_autorized(self, input: List[str]) -> List[str]:
         count = 0
         dishes = []
-        repeat = self.get_repetitive_dish()
+        dish_repeat = self.get_repetitive_dish()
         
         for i in input:
-            if i == repeat[1]:
+            if i == dish_repeat[1]:
                 count += 1
                 if count >= 2:
-                    if f"{repeat[0]}(x{count - 1})" in dishes:
-                        dishes.remove(f"{repeat[0]}(x{count - 1})")
-                    dish = f"{repeat[0]}(x{count})"
+                    if f"{dish_repeat[0]}(x{count - 1})" in dishes:
+                        dishes.remove(f"{dish_repeat[0]}(x{count - 1})")
+                    dish = f"{dish_repeat[0]}(x{count})"
                     dishes.append(dish)
             dishes.append(self.get_dishes()[int(i)-1])
             while "coffee" in dishes or "potato" in dishes:
-                        dishes.remove(f"{repeat[0]}")
+                        dishes.remove(f"{dish_repeat[0]}")
         return dishes
 
     def dishe_uniq(self, dishes: List[str], input, period) -> bool:
