@@ -34,7 +34,7 @@ class DayManager:
                         dishes.remove(f"{dish_repeat[0]}")
         return dishes
     
-    def dish_verify(self, dishes: List[str], dishes_on_the_menu, dish):
+    def dish_verify(self, dishes: List[str], dishes_on_the_menu, dish) -> bool:
         dish_int = int(dish)
         dish_repeat = self.get_repetitive_dish()
         if dish_int >= 5 or dish_int <= 0:

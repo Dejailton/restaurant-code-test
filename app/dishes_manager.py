@@ -21,7 +21,6 @@ class DishesManager(Formatter):
         input = self.list_order(input)
         for dish in input:
             verify_dish = day.dish_verify(self.dishes, dishes_on_the_menu, dish)
-
             if period == "morning" and dish == "3" or period == "night" and dish == "2":
                 count += 1
                 if count > 1:
