@@ -30,7 +30,7 @@ class DayManager:
                     dish = f"{dish_repeat[0]}(x{count})"
                     dishes.append(dish)
             dishes.append(self.get_dishes()[int(i)-1])
-            while "coffee" in dishes or "potato" in dishes:
+            while dish_repeat[0] in dishes:
                         dishes.remove(f"{dish_repeat[0]}")
         return dishes
     
