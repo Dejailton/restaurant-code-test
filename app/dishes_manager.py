@@ -13,52 +13,50 @@ class DishesManager(Formatter):
         elif period == "night":
             return Night()
         
-    def menu_selection(self, input):
-        period = input[0]
+    def menu_selection(self, inputs) -> None:
+        period = inputs[0]
         day = self.verify_period(period)
         count = 0
         dishes_on_the_menu = day.get_dishes()
-        input = self.list_order(input)
-        for dish in input:
+        inputs_order = self.list_order(inputs)
+        repetitive_dish = day.get_repetitive_dish()
+        for dish in inputs_order:
             verify_dish = day.dish_verify(self.dishes, dishes_on_the_menu, dish)
-            if period == "morning" and dish == "3" or period == "night" and dish == "2":
-                count += 1
-                if count > 1:
-                    dishes = day.get_output_autorized(input)
-                    self.dishes.clear()
-                    self.dishes.extend(dishes)
-                    break
-                
+            
             if verify_dish:
                 self.dishes.append("error")
+                break
+            
+            if dish == repetitive_dish[1]:
+                count += 1
+            
+            if count > 1:
+                dishes = day.get_output_autorized(inputs, repetitive_dish)
+                self.dishes.clear()
+                self.dishes.extend(dishes)
                 break
             
             get_dish = dishes_on_the_menu[int(dish)-1]
             self.dishes.append(get_dish)
             
-    def manager_output(self, input:str) -> str:
-        if len(input) == 1:
-            match input:
+    def manager_output(self, inputs:str) -> str:
+        if len(inputs) == 1:
+            match inputs:
                     case ["morning"]:
                         return ""
                     case ["night"]:
                         return ""
                     case _:
                         return "error"
-        elif len(input) >= 2:
-            self.menu_selection(input)
-        else:
-            return "error"    
-    def process_order(self, input: str):
-        input = self.format_lower(input)
-        list = self.format_list(input)
-        output = self.manager_output(list)
-        if len(list) <= 1 or output == "error":
-            if list[0] == "1":
-                return self.format_output(self.dishes)
+        elif len(inputs) >= 2:
+            self.menu_selection(inputs)
+            
+    def process_order(self, inputs: str) -> str:
+        input_lower = self.format_lower(inputs)
+        input_list = self.format_list(input_lower)
+        output = self.manager_output(input_list)
+        if output == "error":
             return output
-        elif len(input) >= 2:
+        else:
             output = self.format_output(self.dishes)
             return output
-        
-        
