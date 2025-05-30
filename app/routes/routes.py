@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request
 from app.restaurant import RestaurantApp
 
 routes_bp = Blueprint("routes", __name__)
