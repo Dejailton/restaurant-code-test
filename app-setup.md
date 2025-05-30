@@ -14,5 +14,15 @@ python -m venv venv
 ./venv/scripts/activate
 pip install -r requirements.txt
 pytest --cov=./
-
 ```
+
+## How to Run aplication web
+```terminal
+python main.py
+access in browser: 127.0.0.1:5000
+
+Exit:
+
+ctrl+c in terminal
+```
+
