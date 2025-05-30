@@ -35,8 +35,9 @@ class DayManager:
     
     def dish_verify(self, dishes: List[str], dishes_on_the_menu, dish) -> bool:
         dish_int = int(dish)
+        dish_int -= 1
         dish_repeat = self.get_repetitive_dish()
-        if dish_int >= 5 or dish_int <= 0:
+        if dish_int >= len(self.get_dishes()) or dish_int < 0:
             return True
         else:
             dish = dishes_on_the_menu[int(dish)-1]

@@ -1,4 +1,3 @@
-from typing import List
 from .class_day.night import Night
 from .class_day.morning import Morning
 from .util.formatter import Formatter
