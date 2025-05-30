@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+</head>
+<body>
+    <h1>Olá bem vindo ao Restaurante!</h1>
+    <form id="form" class="form" method="POST" action="/">
+        <div>
+            <label>Insira o seu pedido:</label>
+            <input id="pedido" class="pedido" name="pedido" type="text">
+        </div>
+        
+        <div>
+            <label>Resultado:</label>
+            <input id="dishes" class="dishes" value="{{ dishes }}">
+        </div>
+
+        <button type="submit">Enviar pedido</button>
+    </form>
+</body>
+</html>
