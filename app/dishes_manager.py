@@ -1,6 +1,5 @@
 from .class_day.night import Night
 from .class_day.morning import Morning
-from .util.formatter import Formatter
 
 class DishesManager(Formatter):
     def __init__(self):
