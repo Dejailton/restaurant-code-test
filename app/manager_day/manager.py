@@ -1,6 +1,5 @@
 from typing import List
 
-
 class DayManager:
     def __init__(self, period, dishes, repetitive_dish):
         self._period = period

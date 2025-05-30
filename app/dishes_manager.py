@@ -1,3 +1,4 @@
+from .util.formatter import Formatter
 from .class_day.night import Night
 from .class_day.morning import Morning
 
